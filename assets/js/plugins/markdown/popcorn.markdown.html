@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Popcorn Markdown Plugin Demo</title>
+
+  <script src="../../popcorn.js"></script>
+  <script src="popcorn.markdown.js"></script>
+  <script>
+   var p;
+    document.addEventListener('DOMContentLoaded', function () {
+      p = Popcorn('#video')
+
+        // Example using template and JSON strings.
+        .markdown({
+          start: 0,  // seconds
+          end:  5,  // seconds
+          target: 'markdown-div',
+          markdown: `**bold**`
+        } )
+
+        // Example using functions, not static.
+        .markdown({
+          start: 0,  // seconds
+          end: 30,
+          target: 'markdown-div',
+          markdown: `## Heading 
+new paragraph with **bold** and _ital_, :-) :rocket: emoji, class attribute, and a footnote[^1] {.crazyclass}
+
+| Table | Too |
+|--|--|
+| yuh huh | right? |
+          
+[^1]: footnote text`
+        } )
+      .volume(0)
+      .play();
+    }, false);
+  </script>
+</head>
+<body>
+  <h1 id="qunit-header">Popcorn Markdown Plugin Demo</h1>
+  <p>Markdown - <a href="http://markdown.github.com/">http://markdown.github.com/</a>
+  <p>Markdown generated HTML templates, created using various data methods, are shown at 5, 15, and 25 seconds.</p>
+  <div>
+    <video id='video'
+      autobuffer
+      preload="auto"
+      controls
+      width= '250px'
+      poster="../../test/poster.png">
+
+      <source id='mp4'
+        src="../../test/trailer.mp4"
+        type='video/mp4; codecs="avc1, mp4a"'>
+
+      <source id='ogv'
+        src="../../test/trailer.ogv"
+        type='video/ogg; codecs="theora, vorbis"'>
+
+      <p>Your user agent does not support the HTML5 Video element.</p>
+
+    </video>
+  </div>
+  <div style="width:700px">
+    <div>Markdown Template</div>
+    <div id="markdown-div" style="position:relative;float:left;width:300px;height:400px"></div>
+  </div>
+</body>
+</html>

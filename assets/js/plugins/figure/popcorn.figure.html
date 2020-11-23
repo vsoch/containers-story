@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Popcorn Figure Plug-in Demo</title>
+  <script src="../../popcorn.js"></script>
+  <script src="popcorn.figure.js"></script>
+  <script>
+   document.addEventListener( "DOMContentLoaded", function() {
+
+     var p = Popcorn( "#video" )
+       .volume( 0 )
+       .play()
+       .figure({
+      	 // seconds
+         start: 1,
+         // seconds
+         end: 15,
+         href: "http://www.drumbeat.org/",
+         src: "https://www.drumbeat.org/media//figures/drumbeat-logo-splash.png",
+         text: "DRUMBEAT",
+         target: "figurediv"
+       })
+       .figure({
+         id: "testing",
+      	 // seconds
+         start: 5,
+         // seconds
+         end: 45,
+         text: "this is just a cat",
+         // no href
+         src: 'https://cdn.pixabay.com/photo/2017/11/14/13/06/kitty-2948404_960_720.jpg',
+         target: "figurediv"
+       });
+   }, false);
+
+  </script>
+</head>
+<body>
+  <h1 id="qunit-header">Popcorn Figure Plug-in Demo</h1>
+  <p> Two figures will appear at 5 seconds.</p>
+  <p> First one (with an overlayed text) will disappear at 15 seconds.</p>
+  <p> Second one (without an overlayed text) will disappear at 45 seconds.</p>
+  <div>
+    <video id="video"
+      controls
+      width="250px"
+      poster="../../test/poster.png">
+
+      <source id="mp4"
+        src="../../test/trailer.mp4"
+        type='video/mp4; codecs="avc1, mp4a"'>
+
+      <source id="ogv"
+        src="../../test/trailer.ogv"
+        type='video/ogg; codecs="theora, vorbis"'>
+
+      <p>Your user agent does not support the HTML5 Video element.</p>
+
+    </video>
+  </div>
+  <div style="width:400px; height:400px" id="figurediv"></div>
+
+</body>
+</html>

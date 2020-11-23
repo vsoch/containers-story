@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Popcorn WebPage Plug-in Demo</title>
+
+  <script src="../../popcorn.js"></script>
+  <script src="popcorn.webpage.js"></script>
+  <script>
+   document.addEventListener( "DOMContentLoaded", function() {
+     var p = Popcorn( "#video" )
+       .volume( 0 )
+       .webpage({
+         start: 0,
+         end: 40,
+         src: "https://digitalhistory.github.io/",
+         target: "webpagediv"
+       })
+       .webpage({
+         id: "webpages-b",
+         start: 0,
+         end: 15,
+         src: "https://nytimes.com/",
+         target: "webpagediv2"
+       });
+     setTimeout( () => 
+       {document.querySelector('#video').play()}, 1500)
+   }, false);
+
+   
+  </script>
+  <style>
+   body {
+       display: grid;
+       grid-template-areas: "head head" "vid vid" "event1 event2";
+   }
+   
+   header {grid-area: head;}
+   div#media-box {grid-area: vid;}
+   div#webpagediv {grid-area: event1; height: 70vh;}
+   div#webpagediv2 {grid-area: event2;}
+   iframe.webpage-plugin {height: 100%;}
+  </style>
+</head>
+<body>
+  <header>
+    <h1 id="qunit-header">Popcorn WebPage Plug-in Demo</h1>
+    <p> A Webpage displaying https://digitalhistory.github.io  will appear at 0 seconds and disappear at 40 seconds.</p>
+    <p> A Webpage displaying front page of NYTimes will appear at 0 seconds and disappear at 15 seconds.</p>
+    <p> Video play is delayed 1.5 secs to allow loading of somewhat heavy pages before start.</p>
+  </header>
+  <div id="media-box">
+    <video id="video"
+           controls 
+           width="250px"
+           poster="../../test/poster.png">
+
+      <source id="mp4"
+              src="../../test/trailer.mp4"
+              type='video/mp4; codecs="avc1, mp4a"'>
+
+      <source id="ogv"
+              src="../../test/trailer.ogv"
+              type='video/ogg; codecs="theora, vorbis"'>
+
+      <p>Your user agent does not support the HTML5 Video element.</p>
+
+    </video>
+  </div>
+  <div id="webpagediv">  </div>
+  <div id="webpagediv2">
+
+</body>
+
+</html>

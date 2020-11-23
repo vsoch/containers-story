@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Containers: A Story of Learning Software Design</title>
+  <!-- You muct include the popcorn.js file. Ensure the path is correct -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+  <meta name="viewport" content="initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@100;500&display=swap" rel="stylesheet"> 
+  <meta charset="utf-8"/>
+</head>
+<body>
+<div class="container">
+  <div class="col-lg-12 premium">
+    <header>
+      <h1>Containers: A Story of Learning Software Design</h1>
+      <p>This is a story of the development of a container technology, Singularity, and supporting tools over 4 years.</p>
+    </header>
+  </div>
+</div>
+<div class="container">
+  <div class="col-lg-8 col-md-6 col-sm-12">
+    <div class="container">
+      <div class="col-lg-6 col-md-12 col-sm-12">
+      </div>
+    </div>
+    <div class="container">
+      <div class="video-player card">
+        <video id='video' controls width= '100%' poster="assets/img/container-story.png"> 
+          <source id='mp4' src="assets/video/container-story-filtered.mp4" type='video/mp4;'> 
+        </video>
+      </div>
+      <div class="location card">
+        <div class="map"></div>
+        <div class="decription container">
+          <div>
+            <div class="card" style="padding:20px" id="footnotediv"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-4 col-md-6 col-sm-12">
+    <div class="container">
+      <div class="col-lg-12">
+        <div class="sidebar card">
+          <ul class="unstyled table fullwidth links">
+            <li class="card tomato">About</li>
+          </ul>
+          <ul class="unstyled content">
+            <li>
+              <figure>
+                <div class="description">
+              This is a virtual talk about containers. Although the intended audience is the scientific user,
+              associated links to view more detail about the talking points are included. Take note that the video 
+              camera died early in, and I decided to continue anyway.
+                </div>
+              </figure>
+            </li>
+          </ul>
+        </div>
+        <div class="sidebar card">
+          <ul class="unstyled table fullwidth links">
+            <li class="card tomato">Goals</li>
+          </ul>
+          <ul class="unstyled content">
+            <li>
+              <figure>
+                <div class="description">
+                  <p>Add time-based, dynamic content.</a>
+                </div>
+              </figure>
+            </li>
+            <li>
+              <figure>
+                <div class="description">
+                  <p>Present the entire talk in one go, no editing or redos.</a>
+                </div>
+              </figure>
+            </li>
+            <li>
+              <figure>
+                <div class="description">
+                  <p>Present the talk while walking on a treadmill, no stopping allowed!</a>
+                </div>
+              </figure>
+            </li>
+          </ul>
+        </div>
+        <div class="sidebar card">
+          <ul class="unstyled table fullwidth links">
+            <li class="card tomato">What I Learned</li>
+          </ul>
+          <ul class="unstyled content">
+            <li>
+              <figure>
+                <div class="description">
+                  <p>I really like this idea of adding custom text to videos! However 
+                  it's probably not best to talk and walk (there was a humming I had to remove with a high-pass filter). The camera that I have also seems
+                  unreliable, as it froze right at the beginnin. That said, this was a quick project and I had a lot of fun, thank you for listening!
+                </div>
+              </figure>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="container">
+  <p class="cart">See an issue? Please reach out to <a href="https://github.com/vsoch" target="_blank">vsoch</a> on GitHub and I'll fix it up!</p>
+</footer>
+
+  <!-- Plugins -->
+  <script src="assets/js/popcorn-complete.js"></script> 
+  <script src="assets/js/plugins/footnote/popcorn.footnote.js"></script>
+  <script src="assets/js/plugins/subtitle/popcorn.subtitle.js"></script>
+  <script>
+    // wait for DOM to load
+    document.addEventListener('DOMContentLoaded', function () {
+      var p = Popcorn('#video')
+      p.footnote({start: 0, end: 5, target: 'footnotediv',
+        text: 'Notes to go along with the presentation will appear here!'})
+      .footnote({start: 5, end: 15, target: 'footnotediv',
+        text: 'A story of how software design comes down to people.'})
+      .footnote({start: 15, end: 24, target: 'footnotediv',
+        text: 'You can learn more about me at <a target="_blank" href="https://vsoch.github.io/">my personal site</a>, or a more formal overview on my <a href="https://www.linkedin.com/in/vsochat/" target="_blank">LinkedIn</a>'})
+      .footnote({start: 24, end: 35, target: 'footnotediv',
+        text: 'This is where my video camera froze! He must be ready early for the Thanksgiving holiday!'})
+      .footnote({start: 60, end: 65, target: 'footnotediv',
+        text: '<a href="https://med.stanford.edu/bmi.html" target="_blank">Stanford University Biomedical Informatics</a>'})
+      .footnote({start: 65, end: 78, target: 'footnotediv',
+        text: '<a href="https://stacks.stanford.edu/file/druid:cj483ss1921/sochat-convergent-methods-spatial-augmented.pdf" target="_blank">Convergent Methods for Spatial and Semantic Image Comparison</a>, and <a href="https://vsoch.github.io/image-comparison-thresholding/" target="_blank">an example interactive result plot.</a>'})
+      .footnote({start: 90, end: 120, target: 'footnotediv',
+        text: 'I presented this fun talk that essentially said "Just Give them the Sandwich!" at <a href="https://www2.slideshare.net/VanessaSochat/pearc17-reproducibility-and-containers-the-perfect-sandwich" target="_blank"> PEARC17</a>.'})
+      .footnote({start: 78, end: 90, target: 'footnotediv',
+        text: 'I thought a lot about <a href="https://vsoch.github.io/2017/reproducible-impossible/" target="_blank"> reproducibility</a> and had vision for an <a href="https://vsoch.github.io/2016/the-academic-software-developer/" target="_blank"> academic software developer</a>.'})
+      .footnote({start: 133, end: 170, target: 'footnotediv',
+        text: 'Docker is the bread and butter of containerization! But you should also check out <a href="https://podman.io/" target="_blank">podman</a>, which is produced by RedHat and could hold promise to offer another rootless container technology.'})
+      .footnote({start: 170, end: 200, target: 'footnotediv',
+        text: 'You can generally search the web to learn why Docker is not good for HPC, even finding posts on a place like <a href="https://www.reddit.com/r/docker/comments/7y2yp2/why_is_singularity_used_as_opposed_to_docker_in/" target="_blank">Reddit!</a>.'})
+      .footnote({start: 203, end: 231, target: 'footnotediv',
+        text: 'The other logos here refer to <a href="https://github.com/NERSC/shifter" target="_blank">Shifter</a>, <a href="https://hpc.github.io/charliecloud/" target="_blank">CharlieCloud</a>, and <a href="https://github.com/opencontainers/runc" target="_blank">runc</a>, which actually is more of a core client to run containers according to the <a href="https://github.com/opencontainers/runtime-spec" target="_blank">opencontainers runtime spec</a>.'})
+      .footnote({start: 232, end: 245, target: 'footnotediv',
+        text: 'You can browse the Singularity list archive at the <a href="https://groups.google.com/a/lbl.gov/forum/embed/#!forum/singularity" target="_blank">singularity.lbl.gov</a> Google Group.'})
+      .footnote({start: 275, end: 285, target: 'footnotediv',
+        text: 'There was an entire community of <a href="https://biocontainers.pro" target="_blank">biocontainers</a>, and other domains of science were deploying workflows with docker, for example <a href="https://bids-apps.neuroimaging.io/" target="_blank">BIDS Apps</a>.'})
+      .footnote({start: 325, end: 345, target: 'footnotediv',
+        text: 'I am about to misspeak! Greg was obviously not the head of LBNL, but rather a HPC Systems Architect and Technical Lead.'})
+      .footnote({start: 285, end: 305, target: 'footnotediv',
+        text: 'The <a href="https://github.com/opencontainers/image-spec/blob/master/manifest.md" target="_blank">Opencontainers (OCI) image spec</a> defines how an image manifest looks, and the <a href="https://github.com/opencontainers/distribution-spec" target="_blank"> distribution spec </a> describes interactions with an OCI compliant registry (e.g., Docker Hub)..'})
+      .footnote({start: 305, end:313, target: 'footnotediv',
+        text: 'I wrote the original docker2singularity script, which eventually was transformed into a Docker image itself, <a href="https://github.com/singularityhub/docker2singularity" target="_blank">docker2singularity</a>.'})
+      .footnote({start: 345, end: 366, target: 'footnotediv',
+        text: 'These are just a sampling of pull requests! I went back and realized that over just a couple of years I contributed ~140 <a href="https://github.com/hpcng/singularity/pulls?q=is%3Apr+author%3Avsoch" target="_blank">pull requests to singularity</a>, which does not include documentation or associated tools.'})
+      .footnote({start: 314, end:325, target: 'footnotediv',
+        text: 'The last version of Singularity that included this older client code (and not Go) was version 2.x, which you can see <a href="https://github.com/hpcng/singularity/tree/vault/master-2.x" target="_blank">here</a>.'})
+      .footnote({start: 366, end: 438, target: 'footnotediv',
+        text: 'This figure was published in the original Singularity paper, although the workflow was refactored to eventually have a better user interface <a href="assets/img/workflow.png" target="_blank"><img style="max-width:100%" src="assets/img/workflow.png" /></a>'})
+      .footnote({start: 465, end: 482, target: 'footnotediv',
+        text: 'Singularity published in <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0177459" target="_blank">PLOS One</a>.'})
+      .footnote({start: 482, end: 508, target: 'footnotediv',
+        text: 'The <a href="https://github.com/singularityware" target="_blank">original SingularityWare</a> organization has taken quite a journey! The software was since moved to <a href="https://github.com/sylabs" target="_blank">Sylabs</a> and now <a href="https://github.com/hpcng" target="_blank">HPCNG</a>. For the repositories that I created and maintained, I moved them over to <a href="https://github.com/singularityhub" target="_blank">a container tooling organization (singularityhub)</a> that I had created.'})
+      .footnote({start: 508, end: 532, target: 'footnotediv',
+        text: 'The original singularity documentation somehow is still online at <a href="https://singularity.lbl.gov" target="_blank">singularity.lbl.gov</a>.'})
+      .footnote({start: 533, end: 551, target: 'footnotediv',
+        text: 'I presented at <a href="https://www2.slideshare.net/VanessaSochat/pearc17-reproducibility-and-containers-the-perfect-sandwich" target="_blank"> PEARC17</a> and <a href="https://cyverse.org/cc" target="_blank">CyVerse container camp</a>, pictured here.'})
+      .footnote({start: 592, end: 618, target: 'footnotediv',
+        text: '<a href="https://singularityhub.github.io/singularity-cli" target="_blank"> Singularity Python</a> makes it easy to interact with Singularity containers in Python, and has since supported <a href="https://singularityhub.github.io/singularity-compose" target="_blank">singularity-compose</a>, <a href="https://issues.apache.org/jira/browse/AIRFLOW-4030" target="_blank">The Apache Airflow Singularity operator</a> along with small user Python scripts that need to interact with Singularity.'})
+      .footnote({start: 663, end: 685, target: 'footnotediv',
+        text: 'Singularity Compose to the rescue! You can read <a href="https://singularityhub.github.io/singularity-compose" target="_blank"> documentation</a> or <a href="https://joss.theoj.org/papers/10.21105/joss.01578" target="_blank"> the paper in JoSS</a>.'})
+      .footnote({start: 685, end: 759, target: 'footnotediv',
+        text: 'These slides are derived from a talk I gave on the <a href="https://www2.slideshare.net/VanessaSochat/the-scientific-filesystem" target="_blank"> Scientific Filesystem</a>.'})
+      .footnote({start: 759, end: 788 , target: 'footnotediv',
+        text: 'The Scientific Filesystem, a specification for interactions and structure for modular containers, was published in <a href="https://academic.oup.com/gigascience/article/7/5/giy023/4931737" target="_blank"> GigaScience</a>, implemented natively in <a href="https://sylabs.io/guides/3.1/user-guide/cli/singularity_apps.html" target="_blank"> Singularity</a>, and also has a <a href="https://github.com/vsoch/scif" target="_blank"> Python client</a> and a <a href="https://github.com/sci-f/scif-go" target="_blank"> Go Client</a> along with an <a href="https://github.com/sci-f" target="_blank">organization</a> with several application examples.'})
+      .subtitle({start: 1, end:15, text: 'No dinosaurs were harmed in the making of this video!'})
+      .footnote({start: 822, end: 937 , target: 'footnotediv',
+        text: '<a href="https://singularity-hub.org/" target="_blank"> Singularity Hub</a> is still around today! The infrastructure along with metrics for reproducibility were published also in <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0188511" target="_blank">Plos One</a>.'})
+      .footnote({start: 956, end: 974, target: 'footnotediv',
+        text: 'This is one of my favorite memes from <a href="http://hyperboleandahalf.blogspot.com/" target="_blank"> Hyperbole and a Half</a>.'})
+      .footnote({start: 1077, end: 1100, target: 'footnotediv',
+        text: 'If you caught that 5 values in front of the decimal is way more than half of $1500, you are correct! By the start of the month we already had much more than that. I suspect that the alert did not kick in until the start of a new billing period, and then the actual start was not exactly the first of the month.'})
+      .footnote({start: 1246, end: 1283, target: 'footnotediv',
+        text: 'You can see the updated post to the community <a href="https://singularityhub.github.io/singularityhub-docs/2019/open-for-building/" target="_blank">here</a>. We also had improved costs, going from spending ~3000 over two months ($1500 a month) down to $1000 over three months!'})
+      .footnote({start: 1352, end: 1376 , target: 'footnotediv',
+        text: 'The <a href="https://cloud.sylabs.io/" target="_blank">Sylabs Library</a> has a cool remote builder, but using it for free (as many scientists need to do) is very limited.'})
+      .footnote({start: 1376, end: 1401 , target: 'footnotediv',
+        text: 'Ha! This is where I am starting to get tired walking and talking. I am embarrassed to say that I am an avid runner and this is tiring me out!'})
+      .footnote({start: 1401, end: 1448, target: 'footnotediv',
+        text: '<a href="https://singularityhub.github.io/sregistry" target="_blank">Singularity Registry Server</a> was my effort to make an open source Singularity Hub.'})
+      .footnote({start: 1508, end: 1544, target: 'footnotediv',
+        text: 'I discovered the endpoints I needed <a href="https://github.com/sylabs/scs-library-client/blob/31250b63795e4a20afd8f4f00b2ad3b34ec188e0/client/push.go#L292" target="_blank">here</a> and then was able to figure out <a href="https://vsoch.github.io/2020/s3-minio-multipart-presigned-upload/" target="_blank">how to support this with Minio</a>.'})
+      .footnote({start: 1448, end: 1480, target: 'footnotediv',
+        text: 'The nginx <a href="https://www.nginx.com/resources/wiki/modules/upload/" target="_blank">upload module</a> was an early solution to improve pushing containers. I did not find a lot of good examples of using it, so I created a <a href="https://vsoch.github.io/2018/django-nginx-upload/" target="_blank">general version</a>'})
+      .footnote({start: 1573, end: 1755, target: 'footnotediv',
+        text: 'The East Container post is <a href="https://vsoch.github.io/2019/easter-egg-2019/" target="_blank">here</a> and the RSE Stories Halloween episode is <a href="https://us-rse.org/rse-stories/2019/the-ghost-in-the-container/" target="_blank">here</a>. Fun personal projects include using <a href="https://vsoch.github.io/2019/singularity-web/" target="_blank">Web Assembly</a> and <a href="https://vsoch.github.io/2020/data-containers/" target="_blank">Data Containers</a>. Other examples include the Singularity containers that I maintain on <a href="https://quay.io/repository/singularity/singularity?tab=tags" target="_blank">Quay.io</a>, the <a href="https://circleci.com/developer/orbs/orb/singularity/singularity" target="_blank">CircleCI orb</a>, and a library to create <a href="https://vsoch.github.io/2018/container-tree/" target="_blank">container trees</a>.'})
+      .footnote({start: 1710, end: 1720, target: 'footnotediv',
+        text: 'The "oops" was actually me almost falling off the treadmill. Hey, it happens sometimes!'})
+      .footnote({start: 1823, end: 1848, target: 'footnotediv',
+        text: 'This was a fun library I created in graduate school, <a href="https://github.com/vsoch/brainart" target="_blank">BrainArt</a>.'})
+      .footnote({start: 1868, end: 1892, target: 'footnotediv',
+        text: 'Thank you for watching! This was really fun to record, figure out this simple interface, and all in under 24 hours. Happy Thanksgiving!'})
+      .footnote({start: 40, end: 47, target: 'footnotediv',
+        text: '<a href="https://sylabs.io/guides/latest/user-guide/" target="_blank"><img src="assets/img/singularity.svg" style="width:200px"/></a>'})
+      // make the video play automatically 
+      //.play();
+    }, false);
+  </script>
+</body>
+</html>
